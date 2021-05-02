@@ -20,7 +20,7 @@ public class Tank {
     private Random random = new Random();
     Rectangle rect = new Rectangle();
     TankFrame tf;
-    FireStrategy fs = new DefaultFireStrategy();
+    FireStrategy fs = new FourDirFireStrategy();
 
     public Tank() {
     }
