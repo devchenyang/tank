@@ -20,7 +20,7 @@ public class Tank {
     private Random random = new Random();
     Rectangle rect = new Rectangle();
     TankFrame tf;
-    FireStrategy fs = new FourDirFireStrategy();
+    FireStrategy fs;
 
     public Tank() {
     }
@@ -173,6 +173,11 @@ public class Tank {
     }
 
     public void fire() {
+        if (this.group == Group.GOOD) {
+            fs  = new FourDirFireStrategy();
+        } else {
+            fs = new DefaultFireStrategy();
+        }
         fs.fire(this);
     }
 }
