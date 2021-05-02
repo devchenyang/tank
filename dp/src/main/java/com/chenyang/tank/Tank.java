@@ -1,6 +1,7 @@
 package com.chenyang.tank;
 
-import java.awt.*;
+import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.util.Random;
 
 // 面向对象编程，把一些（经常重复用到的）属性封装到一个类里，
@@ -174,7 +175,12 @@ public class Tank {
 
     public void fire() {
         if (this.group == Group.GOOD) {
-            fs  = new FourDirFireStrategy();
+            String goodFS =(String) PropertyMgr.get("goodFS");
+            try {
+                fs  = (FireStrategy) Class.forName(goodFS).getDeclaredConstructor().newInstance();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } else {
             fs = new DefaultFireStrategy();
         }
