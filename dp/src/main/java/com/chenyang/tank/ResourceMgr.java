@@ -12,16 +12,12 @@ public class ResourceMgr {
     public static BufferedImage bulletU, bulletD, bulletL, bulletR;
     public static BufferedImage[] explodes = new BufferedImage[16];
 
-//    public static ResourceMgr resourceMgr = new ResourceMgr();
-    public static ResourceMgr resourceMgr;
+    public static ResourceMgr resourceMgr = new ResourceMgr();
 
     private ResourceMgr() {
     }
 
     public static ResourceMgr getInstance() {
-        if (resourceMgr == null) {
-            return new ResourceMgr();
-        }
         return resourceMgr;
     }
 
