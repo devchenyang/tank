@@ -31,6 +31,8 @@ public class Bullet {
         rect.height = HEIGHT;
 
         this.tf = tf;
+
+        tf.bullets.add(this);
     }
 
     public int getX() {

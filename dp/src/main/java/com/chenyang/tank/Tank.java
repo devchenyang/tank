@@ -19,7 +19,8 @@ public class Tank {
     private Group group = Group.BAD;
     private Random random = new Random();
     Rectangle rect = new Rectangle();
-    private TankFrame tf;
+    TankFrame tf;
+    FireStrategy fs = new DefaultFireStrategy();
 
     public Tank() {
     }
@@ -172,12 +173,6 @@ public class Tank {
     }
 
     public void fire() {
-//        tf.b = new Bullet(x, y, dir);
-        int bX = x + Tank.WIDTH / 2 - Bullet.WIDTH / 2;
-        int bY = y + Tank.HEIGHT / 2 - Bullet.HEIGHT / 2;
-        tf.bullets.add(new Bullet(bX, bY, dir, group, tf));
-
-        if (this.group == Group.GOOD)
-            new Thread(() -> new Audio("audio/tank_fire.wav").play()).start();
+        fs.fire(this);
     }
 }
