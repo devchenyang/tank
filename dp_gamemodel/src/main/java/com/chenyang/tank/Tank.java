@@ -104,7 +104,7 @@ public class Tank extends GameObject {
 
         // 验证切换窗口时会调用pain方法
         // System.out.println("paint");
-        if (!living) gm.objects.remove(this);
+        if (!living) gm.remove(this);
         switch (dir) {
             case UP:
                 g.drawImage(this.group == Group.GOOD ? ResourceMgr.rBadTankU : ResourceMgr.rGoodTankU, x, y, null);
@@ -175,7 +175,7 @@ public class Tank extends GameObject {
 //        tf.b = new Bullet(x, y, dir);
         int bX = x + Tank.WIDTH / 2 - Bullet.WIDTH / 2;
         int bY = y + Tank.HEIGHT / 2 - Bullet.HEIGHT / 2;
-        gm.objects.add(new Bullet(bX, bY, dir, group, gm));
+        gm.add(new Bullet(bX, bY, dir, group, gm));
 
         if (this.group == Group.GOOD)
             new Thread(() -> new Audio("audio/tank_fire.wav").play()).start();

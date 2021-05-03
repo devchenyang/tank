@@ -12,12 +12,19 @@ public class GameModel {
 //    List<Explode> explodes = new ArrayList<>();
     List<GameObject> objects = new ArrayList<>();
 
-
     public GameModel() {
         int initTankCount = Integer.parseInt((String) PropertyMgr.get("tank.initCount"));
         for (int i = 0; i < initTankCount; i++) {
-            objects.add(new Tank(50 + i * 80, 200, Dir.DOWN, Group.BAD, this));
+            add(new Tank(50 + i * 80, 200, Dir.DOWN, Group.BAD, this));
         }
+    }
+
+    public void add(GameObject go) {
+        this.objects.add(go);
+    }
+
+    public void remove(GameObject go) {
+        this.objects.remove(go);
     }
 
     public void paint(Graphics g) {
