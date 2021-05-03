@@ -1,8 +1,8 @@
 package com.chenyang.tank;
 
-import java.awt.*;
+import java.awt.Graphics;
 
-public class Explode {
+public class Explode extends GameObject {
     private int x;
     private int y;
     public static int WIDTH = ResourceMgr.explodes[0].getWidth();
@@ -66,7 +66,7 @@ public class Explode {
     public void paint(Graphics g) {
         g.drawImage(ResourceMgr.explodes[step++], x, y, null);
         if (step >= ResourceMgr.explodes.length) {
-            gm.explodes.remove(this);
+            gm.objects.remove(this);
         }
     }
 }

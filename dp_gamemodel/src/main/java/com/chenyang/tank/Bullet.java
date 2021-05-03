@@ -3,7 +3,7 @@ package com.chenyang.tank;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-public class Bullet {
+public class Bullet extends GameObject {
 
     private int x;
     private int y;
@@ -83,7 +83,7 @@ public class Bullet {
 //        g.setColor(Color.RED);
 //        g.fillOval(x, y, WIDTH, HEIGHT);
 //        g.setColor(c);
-        if (!living) gm.bullets.remove(this);
+        if (!living) gm.objects.remove(this);
         switch (dir) {
             case UP:
                 g.drawImage(ResourceMgr.bulletU, x, y, null);
@@ -139,7 +139,7 @@ public class Bullet {
         if (rect.intersects(tank.rect)) {
             tank.setLiving(false);
             this.setLiving(false);
-            gm.explodes.add(new Explode(eX, eY, gm));
+            gm.objects.add(new Explode(eX, eY, gm));
         }
     }
 }
