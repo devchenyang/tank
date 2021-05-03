@@ -19,12 +19,12 @@ public class Tank {
     private Group group = Group.BAD;
     private Random random = new Random();
     Rectangle rect = new Rectangle();
-    private TankFrame tf;
+    private GameModel gm;
 
     public Tank() {
     }
 
-    public Tank(int x, int y, Dir dir, Group group, TankFrame tf) {
+    public Tank(int x, int y, Dir dir, Group group, GameModel gm) {
         this.x = x;
         this.y = y;
         this.dir = dir;
@@ -35,7 +35,7 @@ public class Tank {
         rect.width = WIDTH;
         rect.height = HEIGHT;
 
-        this.tf = tf;
+        this.gm = gm;
     }
 
     public int getX() {
@@ -104,7 +104,7 @@ public class Tank {
 
         // 验证切换窗口时会调用pain方法
         // System.out.println("paint");
-        if (!living) tf.enemies.remove(this);
+        if (!living) gm.enemies.remove(this);
         switch (dir) {
             case UP:
                 g.drawImage(this.group == Group.GOOD ? ResourceMgr.rBadTankU : ResourceMgr.rGoodTankU, x, y, null);
@@ -175,7 +175,7 @@ public class Tank {
 //        tf.b = new Bullet(x, y, dir);
         int bX = x + Tank.WIDTH / 2 - Bullet.WIDTH / 2;
         int bY = y + Tank.HEIGHT / 2 - Bullet.HEIGHT / 2;
-        tf.bullets.add(new Bullet(bX, bY, dir, group, tf));
+        gm.bullets.add(new Bullet(bX, bY, dir, group, gm));
 
         if (this.group == Group.GOOD)
             new Thread(() -> new Audio("audio/tank_fire.wav").play()).start();

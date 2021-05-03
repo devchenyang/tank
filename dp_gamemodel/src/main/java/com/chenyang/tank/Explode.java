@@ -9,15 +9,15 @@ public class Explode {
     public static int HEIGHT = ResourceMgr.explodes[0].getHeight();
     private boolean living = true;
     private int step = 0;
-    private TankFrame tf;
+    private GameModel gm;
 
     public Explode() {
     }
 
-    public Explode(int x, int y, TankFrame tf) {
+    public Explode(int x, int y, GameModel gm) {
         this.x = x;
         this.y = y;
-        this.tf = tf;
+        this.gm = gm;
 
 //        new Audio("audio/explode.wav").play();
         new Thread(() -> new Audio("audio/explode.wav").play()).start();
@@ -55,18 +55,18 @@ public class Explode {
         this.step = step;
     }
 
-    public TankFrame getTf() {
-        return tf;
+    public GameModel getGm() {
+        return gm;
     }
 
-    public void setTf(TankFrame tf) {
-        this.tf = tf;
+    public void setGm(GameModel gm) {
+        this.gm = gm;
     }
 
     public void paint(Graphics g) {
         g.drawImage(ResourceMgr.explodes[step++], x, y, null);
         if (step >= ResourceMgr.explodes.length) {
-            tf.explodes.remove(this);
+            gm.explodes.remove(this);
         }
     }
 }

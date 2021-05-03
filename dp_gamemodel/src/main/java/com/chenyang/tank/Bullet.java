@@ -14,12 +14,12 @@ public class Bullet {
     private boolean living = true;
     private Group group = Group.BAD;
     Rectangle rect = new Rectangle();
-    private TankFrame tf;
+    private GameModel gm;
 
     public Bullet() {
     }
 
-    public Bullet(int x, int y, Dir dir, Group group, TankFrame tf) {
+    public Bullet(int x, int y, Dir dir, Group group, GameModel gm) {
         this.x = x;
         this.y = y;
         this.dir = dir;
@@ -30,7 +30,7 @@ public class Bullet {
         rect.width = WIDTH;
         rect.height = HEIGHT;
 
-        this.tf = tf;
+        this.gm = gm;
     }
 
     public int getX() {
@@ -83,7 +83,7 @@ public class Bullet {
 //        g.setColor(Color.RED);
 //        g.fillOval(x, y, WIDTH, HEIGHT);
 //        g.setColor(c);
-        if (!living) tf.bullets.remove(this);
+        if (!living) gm.bullets.remove(this);
         switch (dir) {
             case UP:
                 g.drawImage(ResourceMgr.bulletU, x, y, null);
@@ -139,7 +139,7 @@ public class Bullet {
         if (rect.intersects(tank.rect)) {
             tank.setLiving(false);
             this.setLiving(false);
-            tf.explodes.add(new Explode(eX, eY, tf));
+            gm.explodes.add(new Explode(eX, eY, gm));
         }
     }
 }

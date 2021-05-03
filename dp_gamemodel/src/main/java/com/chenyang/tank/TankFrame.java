@@ -18,11 +18,7 @@ public class TankFrame extends Frame {
 
     static final int GAME_WIDTH = 800;
     static final int GAME_HEIGHT = 600;
-    Tank myTank = new Tank(200, 400, Dir.UP, Group.GOOD, this);
-    List<Bullet> bullets = new ArrayList<>();
-    List<Tank> enemies = new ArrayList<>();
-    List<Explode> explodes = new ArrayList<>();
-
+    GameModel gm = new GameModel();
 
     public TankFrame() {
         // 只执行这3行命令就可以在屏幕上显示一个窗口
@@ -66,33 +62,7 @@ public class TankFrame extends Frame {
      */
     @Override
     public void paint(Graphics g) {
-
-        Color c = g.getColor();
-        g.setColor(Color.WHITE);
-        g.drawString("子弹的数量：" + bullets.size(), 10, 60);
-        g.drawString("敌人的数量：" + enemies.size(), 10, 80);
-        g.drawString("爆炸的数量：" + explodes.size(), 10, 100);
-        g.setColor(c);
-
-        myTank.paint(g);
-
-        for (int i = 0; i < enemies.size(); i++) {
-            enemies.get(i).paint(g);
-        }
-
-        for (int i = 0; i < bullets.size(); i++) {
-            bullets.get(i).paint(g);
-        }
-
-        for (int i = 0; i < explodes.size(); i++) {
-            explodes.get(i).paint(g);
-        }
-
-        for (int i = 0; i < bullets.size(); i++) {
-            for (int j = 0; j < enemies.size(); j++) {
-                bullets.get(i).collideWith(enemies.get(j));
-            }
-        }
+        gm.paint(g);
     }
 
     /**
@@ -104,6 +74,7 @@ public class TankFrame extends Frame {
         boolean bD = false;
         boolean bL = false;
         boolean bR = false;
+        Tank myTank = gm.myTank;
 
         @Override
         public void keyPressed(KeyEvent e) {
