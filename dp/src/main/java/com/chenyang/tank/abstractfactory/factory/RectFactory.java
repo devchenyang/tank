@@ -5,6 +5,7 @@ import com.chenyang.tank.Group;
 import com.chenyang.tank.TankFrame;
 import com.chenyang.tank.abstractfactory.implrect.RectBullet;
 import com.chenyang.tank.abstractfactory.implrect.RectExplode;
+import com.chenyang.tank.abstractfactory.implrect.RectTank;
 import com.chenyang.tank.abstractfactory.interfaces.BaseBullet;
 import com.chenyang.tank.abstractfactory.interfaces.BaseExplode;
 import com.chenyang.tank.abstractfactory.interfaces.BaseTank;
@@ -13,7 +14,7 @@ public class RectFactory extends GameFactory {
 
     @Override
     public BaseTank createTank(int x, int y, Dir dir, Group group, TankFrame tf) {
-        return null;
+        return new RectTank(x, y, dir, group, tf);
     }
 
     @Override

@@ -25,12 +25,12 @@ public class TankFrame extends Frame {
 
     public static final int GAME_WIDTH = 800;
     public static final int GAME_HEIGHT = 600;
-    public Tank myTank = new Tank(200, 400, Dir.UP, Group.GOOD, this);
     public List<BaseBullet> bullets = new ArrayList<>();
     public List<BaseTank> enemies = new ArrayList<>();
     public List<BaseExplode> explodes = new ArrayList<>();
-    public GameFactory gf = new DefaultFactory();
-//    public GameFactory gf = new RectFactory();
+//    public GameFactory gf = new DefaultFactory();
+    public GameFactory gf = new RectFactory();
+    public BaseTank myTank = gf.createTank(200, 400, Dir.UP, Group.GOOD, this);
 
     public TankFrame() {
         // 只执行这3行命令就可以在屏幕上显示一个窗口
@@ -55,9 +55,10 @@ public class TankFrame extends Frame {
     }
 
     Image offScreenImage = null;
+
     @Override
     public void update(Graphics g) {
-        if(offScreenImage == null) {
+        if (offScreenImage == null) {
             offScreenImage = this.createImage(GAME_WIDTH, GAME_HEIGHT);
         }
         Graphics gOffScreen = offScreenImage.getGraphics();
@@ -135,7 +136,7 @@ public class TankFrame extends Frame {
 
             setMainTankDir();
 
-            new Thread(()-> new Audio("audio/tank_move.wav").play()).start();
+            new Thread(() -> new Audio("audio/tank_move.wav").play()).start();
         }
 
         /**

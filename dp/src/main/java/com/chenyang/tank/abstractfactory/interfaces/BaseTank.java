@@ -23,4 +23,10 @@ public interface BaseTank {
     TankFrame getTf();
 
     Rectangle getRect();
+
+    void fire();
+
+    void setMoving(boolean b);
+
+    void setDir(Dir up);
 }
