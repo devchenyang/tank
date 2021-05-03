@@ -11,8 +11,8 @@ import java.awt.Graphics;
 public class RectExplode implements BaseExplode {
     private int x;
     private int y;
-    public static int WIDTH = ResourceMgr.explodes[0].getWidth();
-    public static int HEIGHT = ResourceMgr.explodes[0].getHeight();
+    public static int WIDTH = 10;
+    public static int HEIGHT = 10;
     private boolean living = true;
     private int step = 0;
     private TankFrame tf;
