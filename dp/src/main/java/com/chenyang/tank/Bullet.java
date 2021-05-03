@@ -141,7 +141,7 @@ public class Bullet {
         if (rect.intersects(tank.rect)) {
             tank.setLiving(false);
             this.setLiving(false);
-            tf.explodes.add(new Explode(eX, eY, tf));
+            tf.explodes.add(tf.gf.createExplode(eX, eY, tf));
         }
     }
 }

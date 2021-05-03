@@ -1,8 +1,10 @@
 package com.chenyang.tank;
 
+import com.chenyang.tank.abstractfactory.interfaces.BaseExplode;
+
 import java.awt.Graphics;
 
-public class Explode {
+public class Explode implements BaseExplode {
     private int x;
     private int y;
     public static int WIDTH = ResourceMgr.explodes[0].getWidth();

@@ -1,5 +1,9 @@
 package com.chenyang.tank;
 
+import com.chenyang.tank.abstractfactory.factory.DefaultFactory;
+import com.chenyang.tank.abstractfactory.factory.GameFactory;
+import com.chenyang.tank.abstractfactory.interfaces.BaseExplode;
+
 import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Graphics;
@@ -21,8 +25,8 @@ public class TankFrame extends Frame {
     Tank myTank = new Tank(200, 400, Dir.UP, Group.GOOD, this);
     List<Bullet> bullets = new ArrayList<>();
     List<Tank> enemies = new ArrayList<>();
-    List<Explode> explodes = new ArrayList<>();
-
+    List<BaseExplode> explodes = new ArrayList<>();
+    GameFactory gf = new DefaultFactory();
 
     public TankFrame() {
         // 只执行这3行命令就可以在屏幕上显示一个窗口
