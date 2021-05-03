@@ -6,9 +6,9 @@ import com.chenyang.tank.TankFrame;
 import com.chenyang.tank.abstractfactory.implrect.RectBullet;
 import com.chenyang.tank.abstractfactory.implrect.RectExplode;
 import com.chenyang.tank.abstractfactory.implrect.RectTank;
-import com.chenyang.tank.abstractfactory.interfaces.BaseBullet;
-import com.chenyang.tank.abstractfactory.interfaces.BaseExplode;
-import com.chenyang.tank.abstractfactory.interfaces.BaseTank;
+import com.chenyang.tank.abstractfactory.abstracts.BaseBullet;
+import com.chenyang.tank.abstractfactory.abstracts.BaseExplode;
+import com.chenyang.tank.abstractfactory.abstracts.BaseTank;
 
 public class RectFactory extends GameFactory {
 

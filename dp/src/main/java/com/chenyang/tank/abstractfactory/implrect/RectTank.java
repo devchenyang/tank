@@ -5,14 +5,14 @@ import com.chenyang.tank.Group;
 import com.chenyang.tank.PropertyMgr;
 import com.chenyang.tank.Tank;
 import com.chenyang.tank.TankFrame;
-import com.chenyang.tank.abstractfactory.interfaces.BaseTank;
+import com.chenyang.tank.abstractfactory.abstracts.BaseTank;
 import com.chenyang.tank.firestrategy.DefaultFireStrategy;
 import com.chenyang.tank.firestrategy.FireStrategy;
 
 import java.awt.*;
 import java.util.Random;
 
-public class RectTank implements BaseTank {
+public class RectTank extends BaseTank {
 
     private int x;
     private int y;

@@ -1,12 +1,12 @@
 package com.chenyang.tank;
 
-import com.chenyang.tank.abstractfactory.interfaces.BaseBullet;
-import com.chenyang.tank.abstractfactory.interfaces.BaseTank;
+import com.chenyang.tank.abstractfactory.abstracts.BaseBullet;
+import com.chenyang.tank.abstractfactory.abstracts.BaseTank;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-public class Bullet implements BaseBullet {
+public class Bullet extends BaseBullet {
 
     private int x;
     private int y;

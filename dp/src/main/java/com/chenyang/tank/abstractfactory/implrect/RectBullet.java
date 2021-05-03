@@ -3,14 +3,14 @@ package com.chenyang.tank.abstractfactory.implrect;
 import com.chenyang.tank.Dir;
 import com.chenyang.tank.Group;
 import com.chenyang.tank.TankFrame;
-import com.chenyang.tank.abstractfactory.interfaces.BaseBullet;
-import com.chenyang.tank.abstractfactory.interfaces.BaseTank;
+import com.chenyang.tank.abstractfactory.abstracts.BaseBullet;
+import com.chenyang.tank.abstractfactory.abstracts.BaseTank;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-public class RectBullet implements BaseBullet {
+public class RectBullet extends BaseBullet {
 
     private int x;
     private int y;

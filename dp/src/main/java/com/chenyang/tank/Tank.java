@@ -1,6 +1,6 @@
 package com.chenyang.tank;
 
-import com.chenyang.tank.abstractfactory.interfaces.BaseTank;
+import com.chenyang.tank.abstractfactory.abstracts.BaseTank;
 import com.chenyang.tank.firestrategy.DefaultFireStrategy;
 import com.chenyang.tank.firestrategy.FireStrategy;
 
@@ -12,7 +12,7 @@ import java.util.Random;
 // 需要的时候new出来，这样可以大大简化代码
 // 然后把画坦克的方法放到Tank类里面，
 // 面向对象设计，哪些方法放到那些类里
-public class Tank implements BaseTank {
+public class Tank extends BaseTank {
     private int x;
     private int y;
     public static int WIDTH = ResourceMgr.rGoodTankD.getWidth();

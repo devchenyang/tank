@@ -3,12 +3,12 @@ package com.chenyang.tank.abstractfactory.implrect;
 import com.chenyang.tank.Audio;
 import com.chenyang.tank.ResourceMgr;
 import com.chenyang.tank.TankFrame;
-import com.chenyang.tank.abstractfactory.interfaces.BaseExplode;
+import com.chenyang.tank.abstractfactory.abstracts.BaseExplode;
 
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class RectExplode implements BaseExplode {
+public class RectExplode extends BaseExplode {
     private int x;
     private int y;
     public static int WIDTH = 10;

@@ -1,7 +1,7 @@
 package com.chenyang.tank.firestrategy;
 
 import com.chenyang.tank.*;
-import com.chenyang.tank.abstractfactory.interfaces.BaseTank;
+import com.chenyang.tank.abstractfactory.abstracts.BaseTank;
 
 public class DefaultFireStrategy implements FireStrategy {
     @Override

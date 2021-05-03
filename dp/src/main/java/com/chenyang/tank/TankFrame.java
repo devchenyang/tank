@@ -1,11 +1,10 @@
 package com.chenyang.tank;
 
-import com.chenyang.tank.abstractfactory.factory.DefaultFactory;
 import com.chenyang.tank.abstractfactory.factory.GameFactory;
 import com.chenyang.tank.abstractfactory.factory.RectFactory;
-import com.chenyang.tank.abstractfactory.interfaces.BaseBullet;
-import com.chenyang.tank.abstractfactory.interfaces.BaseExplode;
-import com.chenyang.tank.abstractfactory.interfaces.BaseTank;
+import com.chenyang.tank.abstractfactory.abstracts.BaseBullet;
+import com.chenyang.tank.abstractfactory.abstracts.BaseExplode;
+import com.chenyang.tank.abstractfactory.abstracts.BaseTank;
 
 import java.awt.Color;
 import java.awt.Frame;
