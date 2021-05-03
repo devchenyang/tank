@@ -1,9 +1,11 @@
 package com.chenyang.tank;
 
+import com.chenyang.tank.abstractfactory.interfaces.BaseBullet;
+
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-public class Bullet {
+public class Bullet implements BaseBullet {
 
     private int x;
     private int y;

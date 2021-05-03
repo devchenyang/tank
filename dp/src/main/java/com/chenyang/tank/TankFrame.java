@@ -27,8 +27,8 @@ public class TankFrame extends Frame {
     public List<Bullet> bullets = new ArrayList<>();
     public List<Tank> enemies = new ArrayList<>();
     public List<BaseExplode> explodes = new ArrayList<>();
-//    public GameFactory gf = new DefaultFactory();
-    public GameFactory gf = new RectFactory();
+    public GameFactory gf = new DefaultFactory();
+//    public GameFactory gf = new RectFactory();
 
     public TankFrame() {
         // 只执行这3行命令就可以在屏幕上显示一个窗口
