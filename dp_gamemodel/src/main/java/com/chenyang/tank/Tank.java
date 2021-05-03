@@ -10,6 +10,8 @@ import java.util.Random;
 public class Tank extends GameObject {
     private int x;
     private int y;
+    private int oldX;
+    private int oldY;
     public static int WIDTH = ResourceMgr.rGoodTankD.getWidth();
     public static int HEIGHT = ResourceMgr.rGoodTankD.getHeight();
     private Dir dir;
@@ -127,6 +129,8 @@ public class Tank extends GameObject {
 
     private void move() {
         if (!moving) return;
+        oldX = x;
+        oldY = y;
         switch (dir) {
             case UP:
                 y -= SPEED;
@@ -179,5 +183,10 @@ public class Tank extends GameObject {
 
         if (this.group == Group.GOOD)
             new Thread(() -> new Audio("audio/tank_fire.wav").play()).start();
+    }
+
+    public void back() {
+        this.x = this.oldX;
+        this.y = this.oldY;
     }
 }
