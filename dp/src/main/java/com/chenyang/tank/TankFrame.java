@@ -2,6 +2,7 @@ package com.chenyang.tank;
 
 import com.chenyang.tank.abstractfactory.factory.DefaultFactory;
 import com.chenyang.tank.abstractfactory.factory.GameFactory;
+import com.chenyang.tank.abstractfactory.factory.RectFactory;
 import com.chenyang.tank.abstractfactory.interfaces.BaseExplode;
 
 import java.awt.Color;
@@ -22,11 +23,12 @@ public class TankFrame extends Frame {
 
     static final int GAME_WIDTH = 800;
     static final int GAME_HEIGHT = 600;
-    Tank myTank = new Tank(200, 400, Dir.UP, Group.GOOD, this);
-    List<Bullet> bullets = new ArrayList<>();
-    List<Tank> enemies = new ArrayList<>();
-    List<BaseExplode> explodes = new ArrayList<>();
-    GameFactory gf = new DefaultFactory();
+    public Tank myTank = new Tank(200, 400, Dir.UP, Group.GOOD, this);
+    public List<Bullet> bullets = new ArrayList<>();
+    public List<Tank> enemies = new ArrayList<>();
+    public List<BaseExplode> explodes = new ArrayList<>();
+//    public GameFactory gf = new DefaultFactory();
+    public GameFactory gf = new RectFactory();
 
     public TankFrame() {
         // 只执行这3行命令就可以在屏幕上显示一个窗口
