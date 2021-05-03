@@ -1,5 +1,6 @@
 package com.chenyang.tank.abstractfactory.implrect;
 
+import com.chenyang.tank.Audio;
 import com.chenyang.tank.ResourceMgr;
 import com.chenyang.tank.TankFrame;
 import com.chenyang.tank.abstractfactory.interfaces.BaseExplode;
@@ -10,6 +11,9 @@ import java.awt.Graphics;
 public class RectExplode implements BaseExplode {
     private int x;
     private int y;
+    public static int WIDTH = ResourceMgr.explodes[0].getWidth();
+    public static int HEIGHT = ResourceMgr.explodes[0].getHeight();
+    private boolean living = true;
     private int step = 0;
     private TankFrame tf;
 
@@ -20,6 +24,8 @@ public class RectExplode implements BaseExplode {
         this.x = x;
         this.y = y;
         this.tf = tf;
+
+        new Thread(() -> new Audio("audio/explode.wav").play()).start();
     }
 
     public int getX() {
@@ -36,6 +42,30 @@ public class RectExplode implements BaseExplode {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public boolean isLiving() {
+        return living;
+    }
+
+    public void setLiving(boolean living) {
+        this.living = living;
+    }
+
+    public int getStep() {
+        return step;
+    }
+
+    public void setStep(int step) {
+        this.step = step;
+    }
+
+    public TankFrame getTf() {
+        return tf;
+    }
+
+    public void setTf(TankFrame tf) {
+        this.tf = tf;
     }
 
     @Override

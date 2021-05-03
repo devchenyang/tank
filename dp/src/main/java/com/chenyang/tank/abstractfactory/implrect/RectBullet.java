@@ -1,9 +1,7 @@
 package com.chenyang.tank.abstractfactory.implrect;
 
 import com.chenyang.tank.Dir;
-import com.chenyang.tank.Explode;
 import com.chenyang.tank.Group;
-import com.chenyang.tank.Tank;
 import com.chenyang.tank.TankFrame;
 import com.chenyang.tank.abstractfactory.interfaces.BaseBullet;
 import com.chenyang.tank.abstractfactory.interfaces.BaseTank;
@@ -128,8 +126,8 @@ public class RectBullet implements BaseBullet {
     public void collideWith(BaseTank tank) {
         if (this.group == tank.getGroup()) return;
 
-        int eX = tank.getX() + Tank.WIDTH / 2 - Explode.WIDTH / 2;
-        int eY = tank.getY() + Tank.HEIGHT / 2 - Explode.HEIGHT / 2;
+        int eX = tank.getX() + RectTank.WIDTH / 2 - RectExplode.WIDTH / 2;
+        int eY = tank.getY() + RectTank.HEIGHT / 2 - RectExplode.HEIGHT / 2;
 
         if (rect.intersects(tank.getRect())) {
             tank.setLiving(false);

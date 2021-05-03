@@ -3,7 +3,6 @@ package com.chenyang.tank.abstractfactory.implrect;
 import com.chenyang.tank.Dir;
 import com.chenyang.tank.Group;
 import com.chenyang.tank.PropertyMgr;
-import com.chenyang.tank.ResourceMgr;
 import com.chenyang.tank.Tank;
 import com.chenyang.tank.TankFrame;
 import com.chenyang.tank.abstractfactory.interfaces.BaseTank;
@@ -17,8 +16,8 @@ public class RectTank implements BaseTank {
 
     private int x;
     private int y;
-    public static int WIDTH = ResourceMgr.rGoodTankD.getWidth();
-    public static int HEIGHT = ResourceMgr.rGoodTankD.getHeight();
+    public static int WIDTH = 50;
+    public static int HEIGHT = 50;
     private Dir dir;
     private static final int SPEED = 2;
     private boolean living = true;
@@ -122,7 +121,7 @@ public class RectTank implements BaseTank {
         Color color = g.getColor();
         if (this.group == Group.GOOD) g.setColor(Color.RED);
         if (this.group == Group.BAD) g.setColor(Color.BLUE);
-        g.fillRect(x, y, 50, 50);
+        g.fillRect(x, y, WIDTH, HEIGHT);
         g.setColor(color);
 
         move();
