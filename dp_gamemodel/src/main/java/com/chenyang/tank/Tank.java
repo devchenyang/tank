@@ -18,8 +18,8 @@ public class Tank extends GameObject {
     private boolean moving = true;
     private Group group = Group.BAD;
     private Random random = new Random();
-    Rectangle rect = new Rectangle();
-    private GameModel gm;
+    public Rectangle rect = new Rectangle();
+    public GameModel gm;
 
     public Tank() {
     }

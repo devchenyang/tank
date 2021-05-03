@@ -13,8 +13,8 @@ public class Bullet extends GameObject {
     private static final int SPEED = 6;
     private boolean living = true;
     private Group group = Group.BAD;
-    Rectangle rect = new Rectangle();
-    private GameModel gm;
+    public Rectangle rect = new Rectangle();
+    public GameModel gm;
 
     public Bullet() {
     }

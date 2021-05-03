@@ -1,5 +1,7 @@
 package com.chenyang.tank;
 
+import com.chenyang.cor.BulletTankCollider;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
@@ -11,6 +13,7 @@ public class GameModel {
 //    List<Tank> enemies = new ArrayList<>();
 //    List<Explode> explodes = new ArrayList<>();
     List<GameObject> objects = new ArrayList<>();
+    BulletTankCollider btCollider = new BulletTankCollider();
 
     public GameModel() {
         int initTankCount = Integer.parseInt((String) PropertyMgr.get("tank.initCount"));
@@ -42,12 +45,7 @@ public class GameModel {
             for (int j = i + 1; j < objects.size(); j++) {
                 GameObject o1 = objects.get(i);
                 GameObject o2 = objects.get(j);
-                if (o1 instanceof Bullet && o2 instanceof Tank) {
-                    ((Bullet) o1).collideWith((Tank) o2);
-                }
-                if (o1 instanceof Tank && o2 instanceof Bullet) {
-                    ((Bullet) o2).collideWith((Tank) o1);
-                }
+                btCollider.collide(o1, o2);
             }
         }
     }
