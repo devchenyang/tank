@@ -31,11 +31,17 @@ public class GameModel {
             objects.get(i).paint(g);
         }
 
-
-        /*for (int i = 0; i < bullets.size(); i++) {
-            for (int j = 0; j < enemies.size(); j++) {
-                bullets.get(i).collideWith(enemies.get(j));
+        for (int i = 0; i < objects.size(); i++) {
+            for (int j = i + 1; j < objects.size(); j++) {
+                GameObject o1 = objects.get(i);
+                GameObject o2 = objects.get(j);
+                if (o1 instanceof Bullet && o2 instanceof Tank) {
+                    ((Bullet) o1).collideWith((Tank) o2);
+                }
+                if (o1 instanceof Tank && o2 instanceof Bullet) {
+                    ((Bullet) o2).collideWith((Tank) o1);
+                }
             }
-        }*/
+        }
     }
 }
