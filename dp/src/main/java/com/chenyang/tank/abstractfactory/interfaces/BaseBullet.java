@@ -6,5 +6,5 @@ import java.awt.*;
 
 public interface BaseBullet {
     void paint(Graphics g);
-    void collideWith(Tank tank);
+    void collideWith(BaseTank tank);
 }

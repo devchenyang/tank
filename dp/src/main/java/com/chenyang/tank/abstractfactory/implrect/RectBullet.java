@@ -1,7 +1,12 @@
 package com.chenyang.tank.abstractfactory.implrect;
 
-import com.chenyang.tank.*;
+import com.chenyang.tank.Dir;
+import com.chenyang.tank.Explode;
+import com.chenyang.tank.Group;
+import com.chenyang.tank.Tank;
+import com.chenyang.tank.TankFrame;
 import com.chenyang.tank.abstractfactory.interfaces.BaseBullet;
+import com.chenyang.tank.abstractfactory.interfaces.BaseTank;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -120,13 +125,13 @@ public class RectBullet implements BaseBullet {
         rect.y = this.y;
     }
 
-    public void collideWith(Tank tank) {
+    public void collideWith(BaseTank tank) {
         if (this.group == tank.getGroup()) return;
 
         int eX = tank.getX() + Tank.WIDTH / 2 - Explode.WIDTH / 2;
         int eY = tank.getY() + Tank.HEIGHT / 2 - Explode.HEIGHT / 2;
 
-        if (rect.intersects(tank.rect)) {
+        if (rect.intersects(tank.getRect())) {
             tank.setLiving(false);
             this.setLiving(false);
             tf.explodes.add(tf.gf.createExplode(eX, eY, tf));

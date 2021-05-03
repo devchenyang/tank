@@ -1,6 +1,11 @@
 package com.chenyang.tank.abstractfactory.factory;
 
-import com.chenyang.tank.*;
+import com.chenyang.tank.Bullet;
+import com.chenyang.tank.Dir;
+import com.chenyang.tank.Explode;
+import com.chenyang.tank.Group;
+import com.chenyang.tank.Tank;
+import com.chenyang.tank.TankFrame;
 import com.chenyang.tank.abstractfactory.interfaces.BaseBullet;
 import com.chenyang.tank.abstractfactory.interfaces.BaseExplode;
 import com.chenyang.tank.abstractfactory.interfaces.BaseTank;
@@ -9,7 +14,7 @@ public class DefaultFactory extends GameFactory {
 
     @Override
     public BaseTank createTank(int x, int y, Dir dir, Group group, TankFrame tf) {
-        return null;
+        return new Tank(x, y, dir, group, tf);
     }
 
     @Override

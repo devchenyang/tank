@@ -1,7 +1,7 @@
 package com.chenyang.tank.firestrategy;
 
-import com.chenyang.tank.Tank;
+import com.chenyang.tank.abstractfactory.interfaces.BaseTank;
 
 public interface FireStrategy {
-    void fire(Tank t);
+    void fire(BaseTank t);
 }

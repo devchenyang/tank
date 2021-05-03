@@ -5,7 +5,7 @@ public class Main {
         TankFrame tf = new TankFrame();
         int initTankCount = Integer.parseInt((String) PropertyMgr.get("tank.initCount"));
         for (int i = 0; i < initTankCount; i++) {
-            tf.enemies.add(new Tank(50 + i * 80, 200, Dir.DOWN, Group.BAD, tf));
+            tf.enemies.add(tf.gf.createTank(50 + i * 80, 200, Dir.DOWN, Group.BAD, tf));
         }
 
         new Thread(()->new Audio("audio/war1.wav").play()).start();
