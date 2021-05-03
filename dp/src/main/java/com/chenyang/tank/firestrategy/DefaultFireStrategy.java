@@ -1,4 +1,9 @@
-package com.chenyang.tank;
+package com.chenyang.tank.firestrategy;
+
+import com.chenyang.tank.Audio;
+import com.chenyang.tank.Bullet;
+import com.chenyang.tank.Group;
+import com.chenyang.tank.Tank;
 
 public class DefaultFireStrategy implements FireStrategy {
     @Override

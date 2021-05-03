@@ -1,6 +1,6 @@
 package com.chenyang.tank;
 
-import java.awt.*;
+import java.awt.Graphics;
 
 public class Explode {
     private int x;

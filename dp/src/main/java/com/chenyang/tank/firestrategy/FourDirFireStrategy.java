@@ -1,4 +1,6 @@
-package com.chenyang.tank;
+package com.chenyang.tank.firestrategy;
+
+import com.chenyang.tank.*;
 
 public class FourDirFireStrategy implements FireStrategy {
     @Override

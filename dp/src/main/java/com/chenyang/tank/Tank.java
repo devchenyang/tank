@@ -1,5 +1,8 @@
 package com.chenyang.tank;
 
+import com.chenyang.tank.firestrategy.DefaultFireStrategy;
+import com.chenyang.tank.firestrategy.FireStrategy;
+
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.Random;
@@ -19,9 +22,9 @@ public class Tank {
     private boolean moving = true;
     private Group group = Group.BAD;
     private Random random = new Random();
-    Rectangle rect = new Rectangle();
-    TankFrame tf;
-    FireStrategy fs;
+    public Rectangle rect = new Rectangle();
+    public TankFrame tf;
+    public FireStrategy fs;
 
     public Tank() {
     }
